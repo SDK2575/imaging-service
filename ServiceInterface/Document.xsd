@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ws.njm.com/Imaging/1.0/ImagingServices" xmlns="http://ws.njm.com/Imaging/1.0/ImagingServices" xmlns:NS="http://ws.njm.com/Imaging/1.0/ImagingServices">
+   <xs:element name="Document">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="Keywords">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element maxOccurs="unbounded" name="Keyword">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="Key" type="xs:string" />
+                              <xs:element name="Value" type="xs:string"/>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element name="DocumentTypeID" type="xs:long" />
+         </xs:sequence>
+         <xs:attribute name="ID" type="xs:long" use="optional" />
+         <xs:attribute name="Type" type="xs:string" use="optional" />
+         <xs:attribute name="FileFormat" type="FileFormatType" use="optional" />
+      </xs:complexType>
+   </xs:element>
+   <xs:simpleType name="FileFormatType">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="TextReportFormat" />
+         <xs:enumeration value="ImageFileFormat" />
+         <xs:enumeration value="ExportTransferDocument" />
+         <xs:enumeration value="DataMiningFormat" />
+         <xs:enumeration value="PCLDataStream" />
+         <xs:enumeration value="EmtexAFPMetacode" />
+         <xs:enumeration value="MSWordDocument" />
+         <xs:enumeration value="MSExcelSpreadsheet" />
+         <xs:enumeration value="MSPowerPoint" />
+         <xs:enumeration value="RichTextFormat" />
+         <xs:enumeration value="PDF" />
+         <xs:enumeration value="HTML" />
+         <xs:enumeration value="AVIMovie" />
+         <xs:enumeration value="QuickTimeMovie" />
+         <xs:enumeration value="WAVAudioFile" />
+         <xs:enumeration value="PCLFilter" />
+         <xs:enumeration value="RedactedImage" />
+         <xs:enumeration value="HitHighlights" />
+         <xs:enumeration value="ElectronicForm" />
+         <xs:enumeration value="ApproveITElectronicSignature" />
+         <xs:enumeration value="VirtualElectronicForm" />
+         <xs:enumeration value="DynamicDocument" />
+         <xs:enumeration value="AFPDocument" />
+         <xs:enumeration value="PCLDictionaryImport" />
+         <xs:enumeration value="DJDE" />
+         <xs:enumeration value="XML" />
+         <xs:enumeration value="PCLFullsize" />
+         <xs:enumeration value="VerityHitHighlights" />
+         <xs:enumeration value="MSOutlookMessage" />
+         <xs:enumeration value="PCLSelfContained" />
+         <xs:enumeration value="PCLOriginalImplementation" />
+         <xs:enumeration value="PhysicalRecord" />
+         <xs:enumeration value="LotusNotesDocument" />
+         <xs:enumeration value="InternalXML" />
+         <xs:enumeration value="PendingVerity" />
+         <xs:enumeration value="HTMLUnicode" />
+         <xs:enumeration value="X1" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:element name="DocumentTypes">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="DocumentType">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="ID" type="xs:string" />
+                     <xs:element name="Value" type="xs:string" />
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="Users">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="User">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="ID" type="xs:string" />
+                     <xs:element name="DisplayName" type="xs:string" />
+                     <xs:element name="GroupName" type="xs:string" />
+                     <xs:element name="OnbaseId" type="xs:int" />
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

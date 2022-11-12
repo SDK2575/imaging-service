@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://localhost/ImagingService/Service.asmx?wsdl" docRef="http://localhost/ImagingService/Service.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://localhost/ImagingService/Service.asmx" xmlns:q1="http://ws.njm.com/Imaging/1.0/ImagingServices" binding="q1:ImageServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://localhost/ImagingService/Service.asmx" xmlns:q2="http://ws.njm.com/Imaging/1.0/ImagingServices" binding="q2:ImageServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

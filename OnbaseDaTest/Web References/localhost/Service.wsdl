@@ -1,0 +1,1338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws.njm.com/Imaging/1.0/ImagingServices" xmlns:s1="http://ws.njm.com/Imaging/1.0/ImagingServices/AbstractTypes" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://ws.njm.com/Imaging/1.0/ImagingServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ws.njm.com/Imaging/1.0/ImagingServices">
+      <s:element name="GetKeywords">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DocumentID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKeywordsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetKeywordsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Keywords" type="tns:ArrayOfDocumentKeyword" />
+                  <s:element minOccurs="1" maxOccurs="1" name="DocumentTypeID" type="s:long" />
+                </s:sequence>
+                <s:attribute name="ID" type="s:long" />
+                <s:attribute name="Type" type="s:string" />
+                <s:attribute name="FileFormat" type="tns:FileFormatType" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDocumentKeyword">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Keyword">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+                <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="FileFormatType">
+        <s:restriction base="s:string">
+          <s:enumeration value="TextReportFormat" />
+          <s:enumeration value="ImageFileFormat" />
+          <s:enumeration value="ExportTransferDocument" />
+          <s:enumeration value="DataMiningFormat" />
+          <s:enumeration value="PCLDataStream" />
+          <s:enumeration value="EmtexAFPMetacode" />
+          <s:enumeration value="MSWordDocument" />
+          <s:enumeration value="MSExcelSpreadsheet" />
+          <s:enumeration value="MSPowerPoint" />
+          <s:enumeration value="RichTextFormat" />
+          <s:enumeration value="PDF" />
+          <s:enumeration value="HTML" />
+          <s:enumeration value="AVIMovie" />
+          <s:enumeration value="QuickTimeMovie" />
+          <s:enumeration value="WAVAudioFile" />
+          <s:enumeration value="PCLFilter" />
+          <s:enumeration value="RedactedImage" />
+          <s:enumeration value="HitHighlights" />
+          <s:enumeration value="ElectronicForm" />
+          <s:enumeration value="ApproveITElectronicSignature" />
+          <s:enumeration value="VirtualElectronicForm" />
+          <s:enumeration value="DynamicDocument" />
+          <s:enumeration value="AFPDocument" />
+          <s:enumeration value="PCLDictionaryImport" />
+          <s:enumeration value="DJDE" />
+          <s:enumeration value="XML" />
+          <s:enumeration value="PCLFullsize" />
+          <s:enumeration value="VerityHitHighlights" />
+          <s:enumeration value="MSOutlookMessage" />
+          <s:enumeration value="PCLSelfContained" />
+          <s:enumeration value="PCLOriginalImplementation" />
+          <s:enumeration value="PhysicalRecord" />
+          <s:enumeration value="LotusNotesDocument" />
+          <s:enumeration value="InternalXML" />
+          <s:enumeration value="PendingVerity" />
+          <s:enumeration value="HTMLUnicode" />
+          <s:enumeration value="X1" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetDocumentTypes">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDocumentTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentTypesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="DocumentType">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentTypesForGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PstrGroupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentTypesForGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentTypesForGroupResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="DocumentType">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentTypesForGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PastrGroupNames" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDocumentTypesForGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentTypesForGroupsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="DocumentType">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentGroups">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDocumentGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentGroupsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="DocumentType">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DocumentID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Keywords" type="tns:ArrayOfDocumentKeyword" />
+                  <s:element minOccurs="1" maxOccurs="1" name="DocumentTypeID" type="s:long" />
+                </s:sequence>
+                <s:attribute name="ID" type="s:long" />
+                <s:attribute name="Type" type="s:string" />
+                <s:attribute name="FileFormat" type="tns:FileFormatType" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateKeywords">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Document">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Keywords" type="tns:ArrayOfDocumentKeyword" />
+                  <s:element minOccurs="1" maxOccurs="1" name="DocumentTypeID" type="s:long" />
+                </s:sequence>
+                <s:attribute name="ID" type="s:long" />
+                <s:attribute name="Type" type="s:string" />
+                <s:attribute name="FileFormat" type="tns:FileFormatType" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateKeywordsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Document">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Keywords" type="tns:ArrayOfDocumentKeyword" />
+                  <s:element minOccurs="1" maxOccurs="1" name="DocumentTypeID" type="s:long" />
+                </s:sequence>
+                <s:attribute name="ID" type="s:long" />
+                <s:attribute name="Type" type="s:string" />
+                <s:attribute name="FileFormat" type="tns:FileFormatType" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDocumentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileBytes" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="Document">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Keywords" type="tns:ArrayOfDocumentKeyword" />
+                  <s:element minOccurs="1" maxOccurs="1" name="DocumentTypeID" type="s:long" />
+                </s:sequence>
+                <s:attribute name="ID" type="s:long" />
+                <s:attribute name="Type" type="s:string" />
+                <s:attribute name="FileFormat" type="tns:FileFormatType" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertDocumentResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DocumentID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDocumentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FindDocuments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="Keywords">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindDocumentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindDocumentsResult" type="tns:ArrayOfDocument" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDocument">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Document" nillable="true">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" maxOccurs="1" name="Keywords" type="tns:ArrayOfDocumentKeyword" />
+                <s:element minOccurs="1" maxOccurs="1" name="DocumentTypeID" type="s:long" />
+              </s:sequence>
+              <s:attribute name="ID" type="s:long" />
+              <s:attribute name="Type" type="s:string" />
+              <s:attribute name="FileFormat" type="tns:FileFormatType" />
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FindDocumentsWithDocumentType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PastrDocumentTypes" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="unbounded" name="Keywords">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindDocumentsWithDocumentTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindDocumentsWithDocumentTypeResult" type="tns:ArrayOfDocument" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intGroupId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindDocumentsWithDocumentTypeGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PastrDocumentTypeGroups" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="unbounded" name="Keywords">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindDocumentsWithDocumentTypeGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindDocumentsWithDocumentTypeGroupResult" type="tns:ArrayOfDocument" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentTypeNameById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentTypesDocumentType">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentTypeNameByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentTypeNameByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentTypeIdByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentTypesDocumentType">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentTypeIdByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentTypeIdByNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersForGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PastrUserGroups" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersForGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsersForGroupsResult" type="tns:Users" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Users">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="User" type="tns:User" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="User">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnbaseId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Document">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Keywords" type="tns:ArrayOfDocumentKeyword" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocumentTypeID" type="s:long" />
+          </s:sequence>
+          <s:attribute name="ID" type="s:long" />
+          <s:attribute name="Type" type="s:string" />
+          <s:attribute name="FileFormat" type="tns:FileFormatType" />
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="DocumentType">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="Users" nillable="true" type="tns:Users" />
+    </s:schema>
+    <s:schema targetNamespace="http://ws.njm.com/Imaging/1.0/ImagingServices/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetKeywordsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKeywords" />
+  </wsdl:message>
+  <wsdl:message name="GetKeywordsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKeywordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesForGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentTypesForGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesForGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentTypesForGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesForGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentTypesForGroups" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesForGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentTypesForGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentGroups" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentData" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateKeywordsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateKeywords" />
+  </wsdl:message>
+  <wsdl:message name="UpdateKeywordsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateKeywordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDocument" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertDocument" />
+  </wsdl:message>
+  <wsdl:message name="InsertDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDocument" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindDocumentsSoapIn">
+    <wsdl:part name="parameters" element="tns:FindDocuments" />
+  </wsdl:message>
+  <wsdl:message name="FindDocumentsSoapOut">
+    <wsdl:part name="parameters" element="tns:FindDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindDocumentsWithDocumentTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:FindDocumentsWithDocumentType" />
+  </wsdl:message>
+  <wsdl:message name="FindDocumentsWithDocumentTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:FindDocumentsWithDocumentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindDocumentsWithDocumentTypeGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:FindDocumentsWithDocumentTypeGroup" />
+  </wsdl:message>
+  <wsdl:message name="FindDocumentsWithDocumentTypeGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:FindDocumentsWithDocumentTypeGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypeNameByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentTypeNameById" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypeNameByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentTypeNameByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypeIdByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentTypeIdByName" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypeIdByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentTypeIdByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersForGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsersForGroups" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersForGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersForGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetKeywordsHttpGetIn">
+    <wsdl:part name="PlngDocumentID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetKeywordsHttpGetOut">
+    <wsdl:part name="Body" element="tns:Document" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesHttpGetIn" />
+  <wsdl:message name="GetDocumentTypesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DocumentTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesForGroupHttpGetIn">
+    <wsdl:part name="PstrGroupName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesForGroupHttpGetOut">
+    <wsdl:part name="Body" element="tns:DocumentTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesForGroupsHttpGetIn">
+    <wsdl:part name="PastrGroupNames" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesForGroupsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DocumentTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentGroupsHttpGetIn" />
+  <wsdl:message name="GetDocumentGroupsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DocumentTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentDataHttpGetIn">
+    <wsdl:part name="PlngDocumentID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:Document" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDocumentHttpGetIn">
+    <wsdl:part name="PlngDocumentID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDocumentHttpGetOut" />
+  <wsdl:message name="GetUsersHttpGetIn">
+    <wsdl:part name="intGroupId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersForGroupsHttpGetIn">
+    <wsdl:part name="PastrUserGroups" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersForGroupsHttpGetOut">
+    <wsdl:part name="Body" element="tns:Users" />
+  </wsdl:message>
+  <wsdl:message name="GetKeywordsHttpPostIn">
+    <wsdl:part name="PlngDocumentID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetKeywordsHttpPostOut">
+    <wsdl:part name="Body" element="tns:Document" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesHttpPostIn" />
+  <wsdl:message name="GetDocumentTypesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DocumentTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesForGroupHttpPostIn">
+    <wsdl:part name="PstrGroupName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesForGroupHttpPostOut">
+    <wsdl:part name="Body" element="tns:DocumentTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesForGroupsHttpPostIn">
+    <wsdl:part name="PastrGroupNames" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypesForGroupsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DocumentTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentGroupsHttpPostIn" />
+  <wsdl:message name="GetDocumentGroupsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DocumentTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentDataHttpPostIn">
+    <wsdl:part name="PlngDocumentID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:Document" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDocumentHttpPostIn">
+    <wsdl:part name="PlngDocumentID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDocumentHttpPostOut" />
+  <wsdl:message name="GetUsersHttpPostIn">
+    <wsdl:part name="intGroupId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersForGroupsHttpPostIn">
+    <wsdl:part name="PastrUserGroups" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersForGroupsHttpPostOut">
+    <wsdl:part name="Body" element="tns:Users" />
+  </wsdl:message>
+  <wsdl:portType name="ImageServiceSoap">
+    <wsdl:operation name="GetKeywords">
+      <wsdl:input message="tns:GetKeywordsSoapIn" />
+      <wsdl:output message="tns:GetKeywordsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypes">
+      <wsdl:input message="tns:GetDocumentTypesSoapIn" />
+      <wsdl:output message="tns:GetDocumentTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypesForGroup">
+      <wsdl:input message="tns:GetDocumentTypesForGroupSoapIn" />
+      <wsdl:output message="tns:GetDocumentTypesForGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypesForGroups">
+      <wsdl:input message="tns:GetDocumentTypesForGroupsSoapIn" />
+      <wsdl:output message="tns:GetDocumentTypesForGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentGroups">
+      <wsdl:input message="tns:GetDocumentGroupsSoapIn" />
+      <wsdl:output message="tns:GetDocumentGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentData">
+      <wsdl:input message="tns:GetDocumentDataSoapIn" />
+      <wsdl:output message="tns:GetDocumentDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKeywords">
+      <wsdl:input message="tns:UpdateKeywordsSoapIn" />
+      <wsdl:output message="tns:UpdateKeywordsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocument">
+      <wsdl:input message="tns:UpdateDocumentSoapIn" />
+      <wsdl:output message="tns:UpdateDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDocument">
+      <wsdl:input message="tns:InsertDocumentSoapIn" />
+      <wsdl:output message="tns:InsertDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocument">
+      <wsdl:input message="tns:DeleteDocumentSoapIn" />
+      <wsdl:output message="tns:DeleteDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindDocuments">
+      <wsdl:input message="tns:FindDocumentsSoapIn" />
+      <wsdl:output message="tns:FindDocumentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindDocumentsWithDocumentType">
+      <wsdl:input message="tns:FindDocumentsWithDocumentTypeSoapIn" />
+      <wsdl:output message="tns:FindDocumentsWithDocumentTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input message="tns:GetUsersSoapIn" />
+      <wsdl:output message="tns:GetUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindDocumentsWithDocumentTypeGroup">
+      <wsdl:input message="tns:FindDocumentsWithDocumentTypeGroupSoapIn" />
+      <wsdl:output message="tns:FindDocumentsWithDocumentTypeGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypeNameById">
+      <wsdl:input message="tns:GetDocumentTypeNameByIdSoapIn" />
+      <wsdl:output message="tns:GetDocumentTypeNameByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypeIdByName">
+      <wsdl:input message="tns:GetDocumentTypeIdByNameSoapIn" />
+      <wsdl:output message="tns:GetDocumentTypeIdByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForGroups">
+      <wsdl:input message="tns:GetUsersForGroupsSoapIn" />
+      <wsdl:output message="tns:GetUsersForGroupsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ImageServiceHttpGet">
+    <wsdl:operation name="GetKeywords">
+      <wsdl:input message="tns:GetKeywordsHttpGetIn" />
+      <wsdl:output message="tns:GetKeywordsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypes">
+      <wsdl:input message="tns:GetDocumentTypesHttpGetIn" />
+      <wsdl:output message="tns:GetDocumentTypesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypesForGroup">
+      <wsdl:input message="tns:GetDocumentTypesForGroupHttpGetIn" />
+      <wsdl:output message="tns:GetDocumentTypesForGroupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypesForGroups">
+      <wsdl:input message="tns:GetDocumentTypesForGroupsHttpGetIn" />
+      <wsdl:output message="tns:GetDocumentTypesForGroupsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentGroups">
+      <wsdl:input message="tns:GetDocumentGroupsHttpGetIn" />
+      <wsdl:output message="tns:GetDocumentGroupsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentData">
+      <wsdl:input message="tns:GetDocumentDataHttpGetIn" />
+      <wsdl:output message="tns:GetDocumentDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocument">
+      <wsdl:input message="tns:DeleteDocumentHttpGetIn" />
+      <wsdl:output message="tns:DeleteDocumentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input message="tns:GetUsersHttpGetIn" />
+      <wsdl:output message="tns:GetUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForGroups">
+      <wsdl:input message="tns:GetUsersForGroupsHttpGetIn" />
+      <wsdl:output message="tns:GetUsersForGroupsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ImageServiceHttpPost">
+    <wsdl:operation name="GetKeywords">
+      <wsdl:input message="tns:GetKeywordsHttpPostIn" />
+      <wsdl:output message="tns:GetKeywordsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypes">
+      <wsdl:input message="tns:GetDocumentTypesHttpPostIn" />
+      <wsdl:output message="tns:GetDocumentTypesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypesForGroup">
+      <wsdl:input message="tns:GetDocumentTypesForGroupHttpPostIn" />
+      <wsdl:output message="tns:GetDocumentTypesForGroupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypesForGroups">
+      <wsdl:input message="tns:GetDocumentTypesForGroupsHttpPostIn" />
+      <wsdl:output message="tns:GetDocumentTypesForGroupsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentGroups">
+      <wsdl:input message="tns:GetDocumentGroupsHttpPostIn" />
+      <wsdl:output message="tns:GetDocumentGroupsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentData">
+      <wsdl:input message="tns:GetDocumentDataHttpPostIn" />
+      <wsdl:output message="tns:GetDocumentDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocument">
+      <wsdl:input message="tns:DeleteDocumentHttpPostIn" />
+      <wsdl:output message="tns:DeleteDocumentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input message="tns:GetUsersHttpPostIn" />
+      <wsdl:output message="tns:GetUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForGroups">
+      <wsdl:input message="tns:GetUsersForGroupsHttpPostIn" />
+      <wsdl:output message="tns:GetUsersForGroupsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ImageServiceSoap" type="tns:ImageServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetKeywords">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetKeywords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypes">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetDocumentTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypesForGroup">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetDocumentTypesForGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypesForGroups">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetDocumentTypesForGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentGroups">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetDocumentGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentData">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetDocumentData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKeywords">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/UpdateKeywords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocument">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/UpdateDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDocument">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/InsertDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocument">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/DeleteDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindDocuments">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/FindDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindDocumentsWithDocumentType">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/FindDocumentsWithDocumentType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindDocumentsWithDocumentTypeGroup">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/FindDocumentsWithDocumentTypeGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypeNameById">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetDocumentTypeNameById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypeIdByName">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetDocumentTypeIdByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForGroups">
+      <soap:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetUsersForGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ImageServiceSoap12" type="tns:ImageServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetKeywords">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetKeywords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypes">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetDocumentTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypesForGroup">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetDocumentTypesForGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypesForGroups">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetDocumentTypesForGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentGroups">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetDocumentGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentData">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetDocumentData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKeywords">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/UpdateKeywords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocument">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/UpdateDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDocument">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/InsertDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocument">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/DeleteDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindDocuments">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/FindDocuments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindDocumentsWithDocumentType">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/FindDocumentsWithDocumentType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindDocumentsWithDocumentTypeGroup">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/FindDocumentsWithDocumentTypeGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypeNameById">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetDocumentTypeNameById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypeIdByName">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetDocumentTypeIdByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForGroups">
+      <soap12:operation soapAction="http://ws.njm.com/Imaging/1.0/ImagingServices/GetUsersForGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ImageServiceHttpGet" type="tns:ImageServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetKeywords">
+      <http:operation location="/GetKeywords" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypes">
+      <http:operation location="/GetDocumentTypes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypesForGroup">
+      <http:operation location="/GetDocumentTypesForGroup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypesForGroups">
+      <http:operation location="/GetDocumentTypesForGroups" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentGroups">
+      <http:operation location="/GetDocumentGroups" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentData">
+      <http:operation location="/GetDocumentData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocument">
+      <http:operation location="/DeleteDocument" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <http:operation location="/GetUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForGroups">
+      <http:operation location="/GetUsersForGroups" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ImageServiceHttpPost" type="tns:ImageServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetKeywords">
+      <http:operation location="/GetKeywords" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypes">
+      <http:operation location="/GetDocumentTypes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypesForGroup">
+      <http:operation location="/GetDocumentTypesForGroup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypesForGroups">
+      <http:operation location="/GetDocumentTypesForGroups" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentGroups">
+      <http:operation location="/GetDocumentGroups" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentData">
+      <http:operation location="/GetDocumentData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocument">
+      <http:operation location="/DeleteDocument" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <http:operation location="/GetUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForGroups">
+      <http:operation location="/GetUsersForGroups" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ImageService">
+    <wsdl:port name="ImageServiceSoap" binding="tns:ImageServiceSoap">
+      <soap:address location="http://localhost/ImagingService/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ImageServiceSoap12" binding="tns:ImageServiceSoap12">
+      <soap12:address location="http://localhost/ImagingService/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ImageServiceHttpGet" binding="tns:ImageServiceHttpGet">
+      <http:address location="http://localhost/ImagingService/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ImageServiceHttpPost" binding="tns:ImageServiceHttpPost">
+      <http:address location="http://localhost/ImagingService/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

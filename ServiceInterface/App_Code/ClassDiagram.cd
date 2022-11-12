@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Document">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>App_Code\Document.cs</FileName>
+      <HashCode>ACAAAAAAAAACgAAAAMCAAAgACAAAACAACQAAAACAgAQ=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="DocumentKeyword">
+    <Position X="0.5" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>App_Code\Document.cs</FileName>
+      <HashCode>AAAACAAAAAAAAAQAAAAAAAAAAAACAAAAAAAgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="DocumentTypes">
+    <Position X="0.5" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>App_Code\Document.cs</FileName>
+      <HashCode>AAACAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="DocumentType">
+    <Position X="0.5" Y="6" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>App_Code\Document.cs</FileName>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAACACAAAAAgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="EnterpriseImaging.ImagingServices.ServiceInterface.ImageService">
+    <Position X="4.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>App_Code\Service.cs</FileName>
+      <HashCode>YAAAgFAAAAQgCAAAAAACACBAAAAAAIACAooAAAIgQwA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Users">
+    <Position X="4.75" Y="5" Width="1.25" />
+    <TypeIdentifier>
+      <FileName>App_Code\Document.cs</FileName>
+      <HashCode>AACBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="User">
+    <Position X="6.25" Y="5" Width="1.25" />
+    <TypeIdentifier>
+      <FileName>App_Code\Document.cs</FileName>
+      <HashCode>AEAAEAAAAAAAgAAAAAAEAAAAAAAAACCAAAAAAAAAEAE=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Enum Name="FileFormatType">
+    <Position X="2.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>App_Code\Document.cs</FileName>
+      <HashCode>EAhgAGQEAQFMBAAIAAgKACAAAJEAEAQCAAIgCEEAYEo=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>
