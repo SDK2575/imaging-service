@@ -1,0 +1,102 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1A3B5BFB-A941-410A-B656-741AA3449E1B}"
+	ProjectSection(SolutionItems) = preProject
+		ImagingServices.vsmdi = ImagingServices.vsmdi
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{7EC653B5-B148-457B-8E49-74DF8139EE87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{FD24F755-89C7-4E52-B09E-9640D4115C9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnBaseDaTest", "OnBaseDaTest\OnBaseDaTest.csproj", "{B85F8CFD-EFEA-498D-A6BC-24B1892A4CA5}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ServiceInterface", "ServiceInterface", "{B465A0CB-688F-4D39-9C0F-C406450BD41A}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		ProjectReferences = "{7EC653B5-B148-457B-8E49-74DF8139EE87}|DataAccess.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/ServiceInterface"
+		Debug.AspNetCompiler.PhysicalPath = "ServiceInterface\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\ServiceInterface\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ServiceInterface"
+		Release.AspNetCompiler.PhysicalPath = "ServiceInterface\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\ServiceInterface\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "28350"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EC653B5-B148-457B-8E49-74DF8139EE87}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{7EC653B5-B148-457B-8E49-74DF8139EE87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC653B5-B148-457B-8E49-74DF8139EE87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC653B5-B148-457B-8E49-74DF8139EE87}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7EC653B5-B148-457B-8E49-74DF8139EE87}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7EC653B5-B148-457B-8E49-74DF8139EE87}.Release|.NET.ActiveCfg = Release|Any CPU
+		{7EC653B5-B148-457B-8E49-74DF8139EE87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC653B5-B148-457B-8E49-74DF8139EE87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EC653B5-B148-457B-8E49-74DF8139EE87}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7EC653B5-B148-457B-8E49-74DF8139EE87}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FD24F755-89C7-4E52-B09E-9640D4115C9A}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{FD24F755-89C7-4E52-B09E-9640D4115C9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD24F755-89C7-4E52-B09E-9640D4115C9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD24F755-89C7-4E52-B09E-9640D4115C9A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FD24F755-89C7-4E52-B09E-9640D4115C9A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FD24F755-89C7-4E52-B09E-9640D4115C9A}.Release|.NET.ActiveCfg = Release|Any CPU
+		{FD24F755-89C7-4E52-B09E-9640D4115C9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD24F755-89C7-4E52-B09E-9640D4115C9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD24F755-89C7-4E52-B09E-9640D4115C9A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FD24F755-89C7-4E52-B09E-9640D4115C9A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B85F8CFD-EFEA-498D-A6BC-24B1892A4CA5}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{B85F8CFD-EFEA-498D-A6BC-24B1892A4CA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B85F8CFD-EFEA-498D-A6BC-24B1892A4CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B85F8CFD-EFEA-498D-A6BC-24B1892A4CA5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B85F8CFD-EFEA-498D-A6BC-24B1892A4CA5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B85F8CFD-EFEA-498D-A6BC-24B1892A4CA5}.Release|.NET.ActiveCfg = Release|Any CPU
+		{B85F8CFD-EFEA-498D-A6BC-24B1892A4CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B85F8CFD-EFEA-498D-A6BC-24B1892A4CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B85F8CFD-EFEA-498D-A6BC-24B1892A4CA5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B465A0CB-688F-4D39-9C0F-C406450BD41A}.Debug|.NET.ActiveCfg = Debug|.NET
+		{B465A0CB-688F-4D39-9C0F-C406450BD41A}.Debug|.NET.Build.0 = Debug|.NET
+		{B465A0CB-688F-4D39-9C0F-C406450BD41A}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{B465A0CB-688F-4D39-9C0F-C406450BD41A}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{B465A0CB-688F-4D39-9C0F-C406450BD41A}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{B465A0CB-688F-4D39-9C0F-C406450BD41A}.Release|.NET.ActiveCfg = Debug|.NET
+		{B465A0CB-688F-4D39-9C0F-C406450BD41A}.Release|.NET.Build.0 = Debug|.NET
+		{B465A0CB-688F-4D39-9C0F-C406450BD41A}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{B465A0CB-688F-4D39-9C0F-C406450BD41A}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{B465A0CB-688F-4D39-9C0F-C406450BD41A}.Release|Mixed Platforms.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {892015DB-75BD-4239-9E5E-4FAA65957440}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = ImagingServices.vsmdi
+	EndGlobalSection
+EndGlobal
